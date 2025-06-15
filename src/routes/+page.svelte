@@ -1,8 +1,13 @@
 <script>
 	import { goto } from '$app/navigation';
+	let count = $state(0);
 
 	function handleClick() {
 		goto(`#about`);
+	}
+
+	function increment() {
+		count += 1;
 	}
 </script>
 
@@ -19,6 +24,7 @@
 <button onclick={increment}> Click here to increment </button>
 <button onclick={changeName}> Click here to change name </button>
 <button onclick={handleClick}>Go to about page</button> -->
+
 <section id="main">
 	<div class="wrapper">
 		<h1 class="text-3xl font-bold underline pb-8">Welcome, Friday!</h1>
@@ -30,7 +36,7 @@
 			</p>
 		</div>
 	</div>
-
+	<div class="absolute inset-0" id="particles-js"></div>
 	<div class="wave">
 		<svg
 			data-name="Layer 1"
@@ -48,6 +54,7 @@
 
 <section id="about">
 	<h1>About</h1>
+	<img src="me.png" alt="myself" height="100" width="200" class="rounded-full" />
 </section>
 
 <style>
@@ -84,6 +91,10 @@
 	#about {
 		background-color: #1a1b26;
 	}
+
+	/* #skills {
+		background-color: #1a1b26;
+	} */
 
 	.wave {
 		position: absolute;
