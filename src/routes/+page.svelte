@@ -1,5 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import About from '../lib/About.svelte';
+	import Contact from '$lib/Contact.svelte';
 	let count = $state(0);
 
 	function handleClick() {
@@ -9,6 +12,18 @@
 	function increment() {
 		count += 1;
 	}
+
+	onMount(() => {
+		document.addEventListener('keydown', (e) => {
+			if (e.key.toLowerCase() === 'h') {
+				goto('/');
+			} else if (e.key.toLowerCase() === 'a') {
+				document.getElementById('about').scrollIntoView({ behavior: 'smooth', block: 'start' });
+			} else if (e.key.toLowerCase() === 'c') {
+				document.getElementById('contacts').scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		});
+	});
 </script>
 
 <!-- <h1>
@@ -25,10 +40,21 @@
 <button onclick={changeName}> Click here to change name </button>
 <button onclick={handleClick}>Go to about page</button> -->
 
-<section id="main">
+<section class="w-full" id="main">
 	<div class="wrapper">
-		<h1 class="text-3xl font-bold underline pb-8">Welcome, Friday!</h1>
-		<div class="subtitle">
+		<pre class="font-bold z-10">
+				
+			
+██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗       ███████╗██████╗ ██╗██████╗  █████╗ ██╗   ██╗██╗
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝       ██╔════╝██╔══██╗██║██╔══██╗██╔══██╗╚██╗ ██╔╝██║
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗         █████╗  ██████╔╝██║██║  ██║███████║ ╚████╔╝ ██║
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝         ██╔══╝  ██╔══██╗██║██║  ██║██╔══██║  ╚██╔╝  ╚═╝
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗▄█╗    ██║     ██║  ██║██║██████╔╝██║  ██║   ██║   ██╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝
+                                                                                                                    
+
+		</pre>
+		<div class="subtitle wrap-break-word">
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatum reprehenderit
 				ullam corporis fuga neque autem molestiae eligendi sed, corrupti a suscipit voluptates!
@@ -53,9 +79,12 @@
 </section>
 
 <section id="about">
-	<h1>About</h1>
-	<img src="me.png" alt="myself" height="100" width="200" class="rounded-full" />
+	<About />
 </section>
+
+<footer class="h-75" id="contacts">
+	<Contact />
+</footer>
 
 <style>
 	.wrapper {
@@ -64,24 +93,51 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		width: 100%;
 	}
 
 	section {
-		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		min-height: 100%;
-		padding: 100px 20vw;
+		grid-template-rows: minmax(2.5rem, 12vmin) 1fr 5rem;
 	}
 
-	h1 {
+	/* h1 {
 		color: #e9e9e9;
-	}
+	} */
 
 	p {
-		color: #e9e9e9;
+		color: #58a0c5;
+	}
+
+	pre {
+		color: #7aa2f7;
+		font-size: max(0.2rem, 1.55vmin);
+		overflow: hidden;
+		border-right: 5px solid;
+		pointer-events: none;
+
+		animation:
+			typing 2s steps(16),
+			cursor 0.4s step-end infinite alternate;
+	}
+
+	@keyframes cursor {
+		50% {
+			border-color: transparent;
+		}
+	}
+
+	@keyframes typing {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 100%;
+		}
 	}
 
 	.subtitle {
@@ -89,7 +145,7 @@
 	}
 
 	#about {
-		background-color: #1a1b26;
+		background-color: #1d1f31;
 	}
 
 	/* #skills {
@@ -116,6 +172,6 @@
 	}
 
 	.wave .shape-fill {
-		fill: #1a1b26;
+		fill: #1d1f31;
 	}
 </style>
