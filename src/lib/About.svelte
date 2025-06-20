@@ -2,7 +2,7 @@
 </script>
 
 <main class="flex flex-col items-center justify-center">
-	<h1>About</h1>
+	<h1>About Linux branch added this here</h1>
 </main>
 
 <style>
