@@ -37,10 +37,22 @@
 		font-family: 'JetBrains Mono Variable';
 		height: 100%;
 		scroll-behavior: smooth;
+		overflow-x: hidden;
+		width: 100%;
 	}
 
 	body {
 		background-color: #24283b;
 		height: 100%;
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	body::-webkit-scrollbar {
+		width: 25rem;
+	}
+
+	body::-webkit-scrollbar-track {
+		background: red;
 	}
 </style>
