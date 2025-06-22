@@ -1,5 +1,5 @@
 <script>
-	import Card from './Card.svelte';
+	import Card from './components/Card.svelte';
 	import reactImg from '../images/react.png';
 	import cppImg from '../images/cpp.png';
 	import svelteImg from '../images/svelte.png';
