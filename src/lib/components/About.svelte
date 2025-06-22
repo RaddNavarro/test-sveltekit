@@ -20,7 +20,6 @@
 	];
 </script>
 
-
 <main class="flex items-center justify-center flex-col gap-20">
 	<h1>Made projects in these</h1>
 	<div class="page-wrapper flex items-center justify-center">

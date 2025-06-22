@@ -1,8 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import About from '../lib/About.svelte';
-	import Contact from '$lib/Contact.svelte';
+	import About from '../lib/components/About.svelte';
+	import Contact from '$lib/components/Contact.svelte';
 	let count = $state(0);
 
 	function handleClick() {
