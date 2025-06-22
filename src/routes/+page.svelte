@@ -1,8 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import About from '../lib/About.svelte';
-	import Contact from '$lib/Contact.svelte';
+	import About from '../lib/components/About.svelte';
+	import Contact from '$lib/components/Contact.svelte';
 	let count = $state(0);
 
 	function handleClick() {
@@ -78,7 +78,7 @@
 	</div>
 </section>
 
-<section id="about">
+<section id="about" class="z-100">
 	<About />
 </section>
 
@@ -113,31 +113,15 @@
 		color: #58a0c5;
 	}
 
+	#contacts {
+		overflow-x: scroll;
+	}
+
 	pre {
 		color: #7aa2f7;
 		font-size: max(0.2rem, 1.55vmin);
 		overflow: hidden;
-		border-right: 5px solid;
 		pointer-events: none;
-
-		animation:
-			typing 2s steps(16),
-			cursor 0.4s step-end infinite alternate;
-	}
-
-	@keyframes cursor {
-		50% {
-			border-color: transparent;
-		}
-	}
-
-	@keyframes typing {
-		0% {
-			width: 0;
-		}
-		100% {
-			width: 100%;
-		}
 	}
 
 	.subtitle {
@@ -160,8 +144,8 @@
 		overflow: hidden;
 		line-height: 0;
 		transform: rotate(180deg);
-		-webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+		/* -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7)); */
+		/* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7)); */
 	}
 
 	.wave svg {
