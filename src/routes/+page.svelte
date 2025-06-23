@@ -39,7 +39,7 @@
 <button onclick={increment}> Click here to increment </button>
 <button onclick={changeName}> Click here to change name </button>
 <button onclick={handleClick}>Go to about page</button> -->
-
+<!-- comment -->
 <section class="w-full" id="main">
 	<div class="wrapper">
 		<pre class="font-bold z-10">
