@@ -56,9 +56,8 @@
 		</pre>
 		<div class="subtitle wrap-break-word">
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatum reprehenderit
-				ullam corporis fuga neque autem molestiae eligendi sed, corrupti a suscipit voluptates!
-				Atque dolorem error autem quis dicta repellat.
+				I'm Friday, and I like to develop shi like games, and websites. This is my personal website,
+				so I would update this from time to time. That's it.
 			</p>
 		</div>
 	</div>
